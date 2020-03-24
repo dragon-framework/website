@@ -1,0 +1,19 @@
+{
+    "name": "dragon-framework/website",
+    "type": "project",
+    "license": "MIT",
+    "description": "A Dragon website project",
+    "authors": [
+        {
+            "name": "Arnaud BODEL",
+            "email": "dragon.framework@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
