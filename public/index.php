@@ -6,7 +6,7 @@
 // }
 require '../vendor/autoload.php';
 
-// $app = new Odyssey\App();
-// $app->run();
+$app = new Dragon\App();
+$app->run();
 
-echo "Hello Dragon !";
+// echo "Hello Dragon !";
