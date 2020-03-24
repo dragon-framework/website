@@ -6,7 +6,7 @@
 // }
 require '../vendor/autoload.php';
 
-$app = new Dragon\App();
+$app = new Dragon\Core;
 $app->run();
 
 // echo "Hello Dragon !";
