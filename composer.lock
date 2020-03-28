@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragon-framework/core.git",
-                "reference": "f14c94e08294963e603a30a3b996394045811aef"
+                "reference": "50e3720d331c8a9ed579494c35e052fc0d8476ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragon-framework/core/zipball/f14c94e08294963e603a30a3b996394045811aef",
-                "reference": "f14c94e08294963e603a30a3b996394045811aef",
+                "url": "https://api.github.com/repos/dragon-framework/core/zipball/50e3720d331c8a9ed579494c35e052fc0d8476ac",
+                "reference": "50e3720d331c8a9ed579494c35e052fc0d8476ac",
                 "shasum": ""
             },
             "require": {
@@ -103,7 +103,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-03-28T15:30:45+00:00"
+            "time": "2020-03-28T15:41:12+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
