@@ -9,10 +9,14 @@ require '../vendor/autoload.php';
 
 // try {
     
-    $app = new Dragon\Core;
+    $app = new Dragon\Kernel;
     $app->run();
 
-    print_r( $app->config() );
+    // dump( $app->config()->getConfig('title') );
+    // dump( $app->routing()->getBase() );
+    // dump( $app->routing()->getRoutes() );
+
+    
 // } catch (Exception $e)
 // {
 //     echo $e->getMessage();
