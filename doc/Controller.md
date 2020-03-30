@@ -27,7 +27,6 @@ $this->render(string $template [, array $params=array()]);
 - **template** The file name in the theme directory `default/hompage.html`.
 - **params** Passing parameters from controller to the template.
 
-
 ### redirect()
 
 ```php
@@ -35,7 +34,6 @@ $this->redirect(string $uri);
 ```
 
 - **uri**
-
 
 ### redirectToRoute()
 
@@ -45,7 +43,6 @@ $this->redirectToRoute(string $routeName [, array $params=array()]);
 
 - **routeName**
 - **params**
-
 
 ### generateUrl()
 
