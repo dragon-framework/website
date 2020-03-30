@@ -1,6 +1,22 @@
-# Dragon Framework
+# Controller Methods
 
-## Controller Methods
+## Exemple
+
+```php
+
+use Dragon\Component\Controller\AbstractController;
+
+class DefaultController extends AbstractController
+{
+    public function index()
+    {
+        // ...
+        return $this->render("homepage/index.html");
+    }
+}
+```
+
+## Methods
 
 ### render()
 
