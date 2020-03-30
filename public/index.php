@@ -7,20 +7,10 @@ if (!file_exists('../vendor/autoload.php')){
 require '../vendor/autoload.php';
 
 
-// try {
-    
-    $app = new Dragon\Kernel;
-    $app->run();
+$app = new Dragon\Kernel;
+$app->run();
 
-    // dump( $app->config()->getConfig('title') );
-    // dump( $app->routing()->getBase() );
-    dump( $app->routing()->getRouter() );
-    // dump( $app->routing()->getRouter()->generate('books:create') );
-
-    
-// } catch (Exception $e)
-// {
-//     echo $e->getMessage();
-// }
-
-
+// dump( $app->config()->getConfig('title') );
+// dump( $app->routing()->getBase() );
+// dump( $app->routing()->getRouter() );
+// dump( $app->routing()->getRouter()->generate('books:create') );
