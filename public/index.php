@@ -14,7 +14,8 @@ require '../vendor/autoload.php';
 
     // dump( $app->config()->getConfig('title') );
     // dump( $app->routing()->getBase() );
-    dump( $app->routing()->getRoutes() );
+    dump( $app->routing()->getRouter() );
+    // dump( $app->routing()->getRouter()->generate('books:create') );
 
     
 // } catch (Exception $e)
