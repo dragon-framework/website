@@ -14,7 +14,7 @@ require '../vendor/autoload.php';
 
     // dump( $app->config()->getConfig('title') );
     // dump( $app->routing()->getBase() );
-    // dump( $app->routing()->getRoutes() );
+    dump( $app->routing()->getRoutes() );
 
     
 // } catch (Exception $e)
