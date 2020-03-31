@@ -7,7 +7,9 @@ class DefaultController extends AbstractController
 {
     public function index()
     {
-        echo $this->generateUrl('books:read', [], true);
+        // dump( $this->generateUrl('books:create') );
+        // dump( $this->generateUrl('books:create', [], true) );
+        
         return $this->render("homepage/index.html");
     }
 }

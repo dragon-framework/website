@@ -1,11 +1,20 @@
 <?php
 namespace App\Controllers;
 
-class BooksController
+// use App\Models\BooksModel;
+use Dragon\Component\Controller\AbstractController;
+
+class BooksController extends AbstractController
 {
     public function index()
     {
-        # code...
+        // $model = new BooksModel;
+        // $books = $model->findAll();
+        $books = $this->findAll();
+
+        return $this->render("books/index.html", [
+            'books' => $books
+        ]);
     }
     public function create()
     {
