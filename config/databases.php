@@ -1,4 +1,8 @@
-<?php return [
+<?php
+
+use Dragon\Component\Database\Query;
+
+return [
 
     [
         'statement' => "main",
@@ -9,8 +13,8 @@
         'user'      => "osw3",
         'pass'      => "myosw3sql",
         'charset'   => "utf8",
-        'prefix'    => "",
-        'fetch-mode'=> "",
+        // 'prefix'    => "dragon_",
+        'fetch-mode'=> Query::FETCH_OBJ,
     ],
 
 ];

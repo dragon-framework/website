@@ -10,6 +10,10 @@
     <h1>Books Index</h1>
 
     <ul>
-        <li>xxx</li>
+        {% for book in books %}
+        <li>
+            {{ book.title }}
+        </li>
+        {% endfor %}
     </ul>
 {% endblock %}
