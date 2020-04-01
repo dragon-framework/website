@@ -1,16 +1,39 @@
 <?php
 namespace App\Controllers;
 
-// use App\Models\BooksModel;
+use App\Models\BooksModel;
 use Dragon\Component\Controller\AbstractController;
 
 class BooksController extends AbstractController
 {
     public function index()
     {
-        // $model = new BooksModel;
-        // $books = $model->findAll();
+        // Query
+        // --
+
+        // A. Make query by the AbstractController
+
+        // A.1. In case of Multiple database, you can reset the database statement definition
+        // $this->setDatabaseStatementDefinition('test');
+
+        // A.2. Execute
         $books = $this->findAll();
+
+
+        // B. Make query by the EntityModel
+
+        // B.1. Get the Model
+        $model = new BooksModel;
+        
+        // B.2. In case of Multiple database, you can reset the database statement definition
+        // $model->setDatabaseStatementDefinition('test');
+
+        // B.3. Execute
+        $books = $model->findAll();
+
+
+
+        
 
         return $this->render("books/index.html", [
             'books' => $books
