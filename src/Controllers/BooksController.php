@@ -36,7 +36,7 @@ class BooksController extends AbstractController
         // B.3. Execute
         // $books = $model->findAll();
 
-
+        // dump( $books );
 
         return $this->render("books/index.html", [
             'books' => $books
