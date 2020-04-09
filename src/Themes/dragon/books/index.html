@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "_layouts/pages/base.html" %}
 
 {% block title %}Books Index{% endblock %}
 
@@ -13,6 +13,8 @@
         {% for book in books %}
         <li>
             {{ book.title }}
+
+            {{ sayYo() }}
         </li>
         {% endfor %}
     </ul>

@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-// use App\Models\BooksModel;
+use App\Models\BooksModel;
 use Dragon\Component\Controller\AbstractController;
 use Dragon\Component\Database\Query;
 
@@ -28,7 +28,7 @@ class BooksController extends AbstractController
         // B. Make query by the EntityModel
 
         // B.1. Get the Model
-        // $model = new BooksModel;
+        $model = new BooksModel;
         
         // B.2. In case of Multiple database, you can reset the database statement definition
         // $model->setDatabaseStatementDefinition('test');

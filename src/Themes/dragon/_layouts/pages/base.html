@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="style.css" />
+            <title>{% block title %}{% endblock %} - My Webpage</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        {% endblock %}
+    </head>
+    <body>
+
+        <header id="main-header">
+            {% block header %}
+            {% include "_components/nav.html" %}
+            {% endblock %}
+        </header>
+
+        <div id="main-content">{% block content %}{% endblock %}</div>
+
+        <footer id="main-footer">
+            {% block footer %}
+                &copy; Copyright  by <a href="javascript:void();">you</a>.
+            {% endblock %}
+        </footer>
+        
+    </body>
+</html>
