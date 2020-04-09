@@ -14,8 +14,13 @@
         <li>
             {{ book.title }}
 
-            {{ sayYo() }}
+            {{ url('books:index') }}
+
+            {{ isRouteActive('books:index') }}
         </li>
         {% endfor %}
     </ul>
+
+    {{ dump('Yop') }}
+    
 {% endblock %}
