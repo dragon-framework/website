@@ -1,19 +1,17 @@
-# Dragon Framework
+# Configuration
 
-## Configuration
+## Project Config
 
-### Project Config
-
-#### `title`
+### `title`
 
 `string` The title of the website
 
-#### `theme`
+### `theme`
 
 `string` the name of the theme directory in `src/Themes/<your-theme>`
 
-### Dev Config
+## Dev Config
 
-#### `dev-hosts`
+### `dev-hosts`
 
 `array(string)` Array of domains development environement

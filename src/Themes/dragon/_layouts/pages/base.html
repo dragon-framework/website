@@ -11,7 +11,7 @@
 
         <header id="main-header">
             {% block header %}
-            {% include "_components/nav.html" %}
+            {% include "_components/header.html" %}
             {% endblock %}
         </header>
 
@@ -19,7 +19,7 @@
 
         <footer id="main-footer">
             {% block footer %}
-                &copy; Copyright  by <a href="javascript:void();">you</a>.
+            {% include "_components/footer.html" %}
             {% endblock %}
         </footer>
         

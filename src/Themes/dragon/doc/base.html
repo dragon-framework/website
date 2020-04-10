@@ -1,0 +1,28 @@
+{% extends "_layouts/pages/base.html" %}
+
+{% block title %}Doc{% endblock %}
+
+{# {% block head %}{% endblock %} #}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <ul>
+                {% for section in sections %}
+                <li>
+                    <a href="{{ url('doc:section', {
+                        "section": section.path,
+                        "md5": section.md5,
+                    }) }}">{{ section.label }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-9">
+            {% block doc_content %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

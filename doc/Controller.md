@@ -3,7 +3,6 @@
 ## Exemple
 
 ```php
-
 use Dragon\Component\Controller\AbstractController;
 
 class DefaultController extends AbstractController

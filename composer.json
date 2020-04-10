@@ -15,6 +15,7 @@
         }
     },
     "require": {
-        "dragon-framework/core": "dev-master"
+        "dragon-framework/core": "dev-master",
+        "michelf/php-markdown": "^1.9"
     }
 }
