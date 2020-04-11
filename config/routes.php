@@ -55,4 +55,18 @@
             ],
         ],
     ],
+
+
+    'security' => [
+        'path'          => "/",
+        'children'      => [
+            'login'     => [
+                'path'          => "login",
+                'controller'    => "Security#login",
+                'methods'       => ["GET", "POST"],
+                'targets'       => ["admin"]
+            ]
+        ]
+    ]
+
 ];

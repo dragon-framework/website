@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}{% endblock %} - Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+{% endblock %}
+</head>
+<body>
+    
+    {% block body %}
+    <header id="main-header" class="main-header">
+        admin header
+    </header>
+    
+    <div id="main-sidebar" class="main-sidebar">
+        admin sidebar
+    </div>
+
+    <div id="main-content" class="main-content">
+        admin content
+    </div>
+    
+    <footer id="main-footer" class="main-footer">
+        admin footer
+    </footer>
+    {% endblock %}
+
+</body>
+</html>
