@@ -27,6 +27,8 @@ $app = new Dragon\Kernel;
 // dump( $app->routing()->get('routes') );
 // dump( $app->routing()->getRouter() );
 // dump( $app->routing()->get('router') );
+// dump( $app->routing()->get('active') );
+// exit;
 
 
 // Database Methods

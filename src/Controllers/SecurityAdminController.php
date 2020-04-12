@@ -8,7 +8,7 @@ class SecurityAdminController extends AbstractAdminController
 {
     public function login()
     {
-        if ($_SERVER['REQUEST_METHOD'] === "POST")
+        if ($this->request()->isPost())
         {
             $hasError = false;
 
@@ -16,7 +16,7 @@ class SecurityAdminController extends AbstractAdminController
             // Retrieve Post data
             // --
 
-            $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : null;
+            $email = $this->request()->request()->get('email');
 
 
             // Check Post data
@@ -43,6 +43,11 @@ class SecurityAdminController extends AbstractAdminController
                 'firstname' => $user['firstname'],
             ];
 
+            // dump( $email );
+            // dump( $user );
+            // dump( $params );
+            // exit;
+
 
 
             if (!$hasError)
@@ -56,17 +61,20 @@ class SecurityAdminController extends AbstractAdminController
                     ->setSubject("[Dragon Auth] Log in to ". $params['site_name'])
                     ->setBodyTemplate("_security/email/auth-step-1.html")
                     ->setAltBodyTemplate("_security/email/auth-step-1.txt")
-                    // ->send()
+                    ->send()
                 ;
 
-                return $this->render("_security/pages/auth-step-1-success.html");
-
+                $this->redirectToRoute("admin:security:pending");
             }
         }
 
-        dump( $_SERVER );
-        exit;
-
         return $this->render("_security/pages/auth-step-1.html");
+    }
+
+    public function authPending()
+    {
+        echo "Pending";
+
+        exit;
     }
 }

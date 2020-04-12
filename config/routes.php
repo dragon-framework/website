@@ -58,14 +58,22 @@
 
 
     'security' => [
-        'path'          => "/",
+        // 'path'          => "",
         'children'      => [
+            'pending' =>[
+                'path'          => "/pending",
+                'controller'    => "Security#authPending",
+                'methods'       => ["GET"],
+                'targets'       => ["admin"],
+            ],
             'login'     => [
-                'path'          => "login",
+                'path'          => "/login",
                 'controller'    => "Security#login",
                 'methods'       => ["GET", "POST"],
-                'targets'       => ["admin"]
-            ]
+                'targets'       => ["admin"],
+
+                // 'granted'       => ["admin"],
+            ],
         ]
     ]
 

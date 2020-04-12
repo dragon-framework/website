@@ -1,17 +1,49 @@
 # Configuration
 
-## Project Config
+- [Global Configuration](#global-configuration)
+- [Database](#database-configuration)
+- [Mailer](#mailer-configuration)
+- [Routes](#routes-configuration)
 
-### `title`
+## Global Configuration {#global-configuration}
 
-`string` The title of the website
+|Key|Type|Default|Description|
+|--|--|--|--|
+|`title`|`string`|""|The title of the website.|
+|`theme`|`string`|""|The name of the theme directory in `src/Themes/`.|
+|`session`|`bool`|true|Start PHP Session if TRUE.|
 
-### `theme`
+## Database Configuration {#database-configuration}
 
-`string` the name of the theme directory in `src/Themes/<your-theme>`
+|Key|Type|Default|Description|
+|--|--|--|--|
+|`statement`|`string`|""|The name of the statement.|
+|`driver`|`string`|"mysql"|Database driver.|
+|`host`|`string`|""|Database Host.|
+|`port`|`integer`|3306|Database Host port.|
+|`schema`|`string`|""|Database name.|
+|`user`|`string`|""|Database user name.|
+|`pass`|`string`|""|Database user password.|
+|`charset`|`string`|"utf8"|Database charset.|
+|`prefix`|`string`|""|Tables prefix.|
+|`fetch-mode`|`string`|Query::FETCH_OBJ|Default result mode.|
 
-## Dev Config
+## Mailer Configuration {#mailer-configuration}
 
-### `dev-hosts`
+|Key|Type|Default|Description|
+|--|--|--|--|
+|`transport`|`string`|"smtp"|.|
+|`auth`|`bool`|true|.|
+|`tls`|`bool`|true|.|
+|`host`|`string`|""|.|
+|`username`|`string`|""|.|
+|`password`|`string`|""|.|
+|`port`|`integer`|587|.|
+|`from_address`|`string`|""|Defaut sender email.|
+|`from_name`|`string`|""|Default sender name.|
+|`noreply`|`string`|""|Default no-reply address.|
 
-`array(string)` Array of domains development environement
+## Routes Configuration {#routes-configuration}
+
+|Key|Type|Default|Description|
+|--|--|--|--|
