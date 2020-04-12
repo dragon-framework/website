@@ -1,0 +1,14 @@
+{% extends "_layouts/pages/admin.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-4 offset-4">
+
+        <h3>A login email is on the way</h3>
+
+        <p>Click on the secure login link in the email to access your account.</p>
+        <p>Don't see the email? Be sure to check your spam folder or <a href="{{ url('admin:security:login') }}">click here to try again</a>.</p>
+
+    </div>
+</div>
+{% endblock %}

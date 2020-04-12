@@ -28,9 +28,24 @@ $app = new Dragon\Kernel;
 // dump( $app->routing()->getRouter() );
 // dump( $app->routing()->get('router') );
 
+
+// Database Methods
+// --
+
 // dump( $app->database() );
 // dump( $app->database()->dbh('main') );
 
+
+// Mailer Methods
+// --
+
+// dump( $app->mailer()->get('transport') );
+// dump( $app->mailer()->get('auth') );
+// dump( $app->mailer()->get('tls') );
+// dump( $app->mailer()->get('host') );
+// dump( $app->mailer()->get('username') );
+// dump( $app->mailer()->get('password') );
+// dump( $app->mailer()->get('port') );
 
 
 $app->run();
