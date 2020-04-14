@@ -39,24 +39,24 @@
     ],
 
 
-    'security' => [
-        // 'path'          => "",
-        'children'      => [
-            'pending' =>[
-                'path'          => "/pending",
-                'controller'    => "Security#authPending",
-                'methods'       => ["GET"],
-                'targets'       => ["admin"],
-            ],
-            'login'     => [
-                'path'          => "/login",
-                'controller'    => "Security#login",
-                'methods'       => ["GET", "POST"],
-                'targets'       => ["admin"],
+    // 'security' => [
+    //     // 'path'          => "",
+    //     'children'      => [
+    //         'pending' =>[
+    //             'path'          => "/pending",
+    //             'controller'    => "Security#authPending",
+    //             'methods'       => ["GET"],
+    //             'targets'       => ["admin"],
+    //         ],
+    //         'login'     => [
+    //             'path'          => "/login",
+    //             'controller'    => "Security#login",
+    //             'methods'       => ["GET", "POST"],
+    //             'targets'       => ["admin"],
 
-                // 'granted'       => ["admin"],
-            ],
-        ]
-    ]
+    //             // 'granted'       => ["admin"],
+    //         ],
+    //     ]
+    // ]
 
 ];

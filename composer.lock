@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71ce884469c5e338b2b70e5399a9d808",
+    "content-hash": "a2b6acef80906053dc9cc5b4ea413e7f",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -68,17 +68,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragon-framework/core.git",
-                "reference": "7731f95356f886615c110bae679a018866f187d8"
+                "reference": "2392aaba597df36211a5c711f2c93e073dc6379d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragon-framework/core/zipball/7731f95356f886615c110bae679a018866f187d8",
-                "reference": "7731f95356f886615c110bae679a018866f187d8",
+                "url": "https://api.github.com/repos/dragon-framework/core/zipball/2392aaba597df36211a5c711f2c93e073dc6379d",
+                "reference": "2392aaba597df36211a5c711f2c93e073dc6379d",
                 "shasum": ""
             },
             "require": {
                 "altorouter/altorouter": "^2.0",
                 "league/uri": "^6.2",
+                "michelf/php-markdown": "^1.9",
                 "phpmailer/phpmailer": "^6.1",
                 "twig/twig": "^3.0"
             },
@@ -105,7 +106,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-04-12T01:28:51+00:00"
+            "time": "2020-04-14T03:33:46+00:00"
         },
         {
             "name": "league/uri",
