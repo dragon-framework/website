@@ -7,24 +7,6 @@
         'targets'       => ["public", "admin", "api"],
     ],
 
-    'doc' => [
-        'path'          => "/doc",
-        'children'      => [
-            'index'     => [
-                'path'          => "",
-                'controller'    => "Doc#index",
-                'methods'       => ["GET"],
-                'targets'       => ["public"]
-            ],
-            'section'   => [
-                'path'          => "/[:section]/[:md5]",
-                'controller'    => "Doc#section",
-                'methods'       => ["GET"],
-                'targets'       => ["public"]
-            ]
-        ]
-    ],
-
     'books' => [
         'path'          => "/books",
         'children'      => [

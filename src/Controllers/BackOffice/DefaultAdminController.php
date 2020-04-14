@@ -1,9 +1,9 @@
 <?php
-namespace App\Controllers;
+namespace App\Controllers\BackOffice;
 
 use Dragon\Component\Controller\AbstractAdminController;
 
-class DefaultAdminController extends AbstractAdminController
+class DefaultController extends AbstractAdminController
 {
     public function index()
     {

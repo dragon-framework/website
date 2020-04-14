@@ -1,10 +1,10 @@
 <?php
-namespace App\Controllers;
+namespace App\Controllers\BackOffice;
 
 use Dragon\Component\Controller\AbstractAdminController;
 use Dragon\Component\Mailer\Mailer;
 
-class SecurityAdminController extends AbstractAdminController
+class SecurityController extends AbstractAdminController
 {
     public function login()
     {

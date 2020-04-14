@@ -6,16 +6,23 @@ if (!file_exists('../vendor/autoload.php')){
 }
 require '../vendor/autoload.php';
 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $app = new Dragon\Kernel;
 
 
 // Config Methods
 // --
 
+// dump( $app );
 // dump( $app->config() );
-// dump( $app->config()->get('env') );
 // dump( $app->config()->get('title') );
-// dump( $app->config()->get('theme') );
+// dump( $app->config()->get('environment') );
+// dump( $app->config()->get('session') );
 
 
 // Routing Methods
@@ -23,9 +30,7 @@ $app = new Dragon\Kernel;
 
 // dump( $app->routing()->getBase() );
 // dump( $app->routing()->get('base') );
-// dump( $app->routing()->getRoutes() );
 // dump( $app->routing()->get('routes') );
-// dump( $app->routing()->getRouter() );
 // dump( $app->routing()->get('router') );
 // dump( $app->routing()->get('active') );
 // exit;

@@ -16,7 +16,6 @@
     },
     "require": {
         "dragon-framework/core": "dev-master",
-        "michelf/php-markdown": "^1.9",
         "phpmailer/phpmailer": "^6.1"
     }
 }

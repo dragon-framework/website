@@ -55,7 +55,7 @@
             <ul>
                 {% for section in sections %}
                 <li>
-                    <a href="{{ url('doc:section', {
+                    <a href="{{ url('_doc:section', {
                         "section": section.path,
                         "md5": section.md5,
                     }) }}">{{ section.label }}</a>

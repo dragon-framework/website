@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers;
+namespace App\Controllers\FrontOffice;
 
 use App\Models\BooksModel;
 use Dragon\Component\Controller\AbstractController;
