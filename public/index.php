@@ -6,13 +6,8 @@ if (!file_exists('../vendor/autoload.php')){
 }
 require '../vendor/autoload.php';
 
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 $app = new Dragon\Kernel;
+$app->run();
 
 
 // Config Methods
@@ -24,6 +19,12 @@ $app = new Dragon\Kernel;
 // dump( $app->config()->get('environment') );
 // dump( $app->config()->get('session') );
 
+// dump( $app );
+// dump( $app->security() );
+// dump( $app->security()->get('authentication') );
+// dump( $app->security()->get('strategy') );
+// dump( $app->security()->get('property') );
+
 
 // Routing Methods
 // --
@@ -33,6 +34,7 @@ $app = new Dragon\Kernel;
 // dump( $app->routing()->get('routes') );
 // dump( $app->routing()->get('router') );
 // dump( $app->routing()->get('active') );
+// dump( $app->routing()->get('router')->generate('books:create') );
 // exit;
 
 
@@ -55,10 +57,4 @@ $app = new Dragon\Kernel;
 // dump( $app->mailer()->get('port') );
 
 
-$app->run();
 
-// dump( $app->config()->getConfig() );
-// dump( $app->config()->getConfig('title') );
-// dump( $app->routing()->getBase() );
-// dump( $app->routing()->getRouter() );
-// dump( $app->routing()->getRouter()->generate('books:create') );
