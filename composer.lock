@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragon-framework/core.git",
-                "reference": "2392aaba597df36211a5c711f2c93e073dc6379d"
+                "reference": "c4435214fbe022f9dc769fc452b5877635e99636"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragon-framework/core/zipball/2392aaba597df36211a5c711f2c93e073dc6379d",
-                "reference": "2392aaba597df36211a5c711f2c93e073dc6379d",
+                "url": "https://api.github.com/repos/dragon-framework/core/zipball/c4435214fbe022f9dc769fc452b5877635e99636",
+                "reference": "c4435214fbe022f9dc769fc452b5877635e99636",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +106,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-04-14T03:33:46+00:00"
+            "time": "2020-04-18T15:06:38+00:00"
         },
         {
             "name": "league/uri",

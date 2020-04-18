@@ -9,10 +9,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
+
             <ul class="navbar-nav">
-                <li class="nav-item {{ isRouteActive('homepage') ? "active" : null }}">
-                    <a class="nav-link" href="{{ url('homepage') }}">Home</a>
-                </li>
                 <li class="nav-item {{ isRouteActive('books:index') ? "active" : null }}">
                     <a class="nav-link" href="{{ url('books:index') }}">Books</a>
                 </li>
@@ -22,6 +20,15 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin:homepage') }}">Admin</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {{ isRouteActive('_login') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_login') }}">Login</a>
+                </li>
+                <li class="nav-item {{ isRouteActive('_register') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_register') }}">Register</a>
                 </li>
             </ul>
         </div>
