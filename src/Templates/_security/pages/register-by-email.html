@@ -1,0 +1,36 @@
+{% extends "_layouts/pages/admin.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-4 offset-4">
+
+        <h3>Create your new account</h3>
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" class="form-control" id="firstname" aria-describedby="firstnameHelp">
+                <small id="firstnameHelp" class="form-text text-muted">Write your firstname.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Lastname</label>
+                <input type="text" class="form-control" id="lastname" aria-describedby="lastnameHelp">
+                <small id="lastnameHelp" class="form-text text-muted">Write your lastname.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">Write your email.</small>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+        <a href="{{ url('_login') }}">Login</a>
+
+    </div>
+</div>
+{% endblock %}

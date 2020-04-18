@@ -1,4 +1,5 @@
 <?php return [
-    'strategy' => "email",
+    'strategy' => "password",
     'token_expiration' => 900,
+    'registration_allowed' => true,
 ];
