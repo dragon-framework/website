@@ -11,6 +11,13 @@
 </head>
 <body>
     
+    {% set flash = getFlashBag() %}
+    {% if flash %}
+    <div class="alert alert-{{ flash.state }}">
+        {{ flash.message }}
+    </div>
+    {% endif %}
+
     {% block body %}
     <header id="main-header" class="main-header">
         admin header

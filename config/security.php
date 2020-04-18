@@ -1,3 +1,4 @@
 <?php return [
-    'strategy' => "2fa",
+    'strategy' => "email",
+    'token_expiration' => 900,
 ];
