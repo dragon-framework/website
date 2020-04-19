@@ -11,12 +11,7 @@
 </head>
 <body>
     
-    {% set flash = getFlashBag() %}
-    {% if flash %}
-    <div class="alert alert-{{ flash.state }}">
-        {{ flash.message }}
-    </div>
-    {% endif %}
+    {% include "_components/flashbag.html" %}
 
     {% block body %}
     <header id="main-header" class="main-header">

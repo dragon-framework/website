@@ -24,12 +24,21 @@
             </ul>
 
             <ul class="navbar-nav ml-auto">
+            {% if isAnonymous() %}
                 <li class="nav-item {{ isRouteActive('_login') ? "active" : null }}">
                     <a class="nav-link" href="{{ url('_login') }}">Login</a>
                 </li>
                 <li class="nav-item {{ isRouteActive('_register') ? "active" : null }}">
                     <a class="nav-link" href="{{ url('_register') }}">Register</a>
                 </li>
+            {% else %}
+                <li class="nav-item {{ isRouteActive('_profile') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_profile') }}">{{ user().screenname }}</a>
+                </li>
+                <li class="nav-item {{ isRouteActive('_logout') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_logout') }}">Logout</a>
+                </li>
+            {% endif %}
             </ul>
         </div>
 

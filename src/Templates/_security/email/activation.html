@@ -1,0 +1,15 @@
+{% extends "_layouts/email/base.html" %}
+
+{% block title %}{{ subject }}{% endblock %}
+
+{% block body %}
+<h1>{{ subject }}</h1>
+
+<p>Bonjour {{ firstname }}</p>
+
+<p>Cliquez sur le lien ci-dessous pour activer votre nouveau compte sur le site {{ site_name }}.</p>
+<p>Cet e-mail contient un lien d'activation privé valide 48h après son émission et qui ne peut être utilisé qu'une seule fois.</p>
+
+<p><a href="{{ link }}">{{ link }}</a></p>
+
+{% endblock %}
