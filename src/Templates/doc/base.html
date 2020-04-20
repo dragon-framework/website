@@ -45,11 +45,19 @@
     .documentation td:nth-child(3) {
         width: 200px;
     }
+
+    .documentation pre {
+        padding: 10px;
+        font-size: 14px;
+        font-family: Consolas, Monospace;
+        background-color: #232125;
+        color: #FFF;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-3">
             <ul>
@@ -61,6 +69,8 @@
                     }) }}">{{ section.label }}</a>
                 </li>
                 {% endfor %}
+
+                <li><a href="{{ url('_doc:examples') }}">Examples</a></li>
             </ul>
         </div>
         <div class="col-9">

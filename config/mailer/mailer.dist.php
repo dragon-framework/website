@@ -8,9 +8,9 @@
     'password'      => "",
     'port'          => "587",
 
-    // Expeditor
-    'from_address'  => "",
-    'from_name'     => "",
+    // Sender
+    'sender_address'  => "",
+    'sender_name'     => "",
     
     'noreply'       => "",
 ];

@@ -4,7 +4,6 @@
         'path'          => "/",
         'controller'    => "Default#index",
         'methods'       => ["GET"],
-        'targets'       => ["public", "admin", "api"],
     ],
 
     'books' => [
@@ -19,21 +18,24 @@
                 'path'      => "/create",
                 'controller'=> "Books#create",
                 'methods'   => ["GET"],
+                'guards'    => ["ADMIN"],
             ],
             'read'      => [
-                'path'      => "/[:id]",
+                'path'      => "/[i:id]",
                 'controller'=> "Books#read",
                 'methods'   => ["GET"],
             ],
             'update'    => [
-                'path'      => "/[:id]/edit",
+                'path'      => "/[i:id]/edit",
                 'controller'=> "Books#update",
                 'methods'   => ["GET"],
+                'guards'    => ["ADMIN"],
             ],
             'delete'    => [
-                'path'      => "/[:id]/delete",
+                'path'      => "/[i:id]/delete",
                 'controller'=> "Books#delete",
                 'methods'   => ["GET"],
+                'guards'    => ["ADMIN"],
             ],
         ],
     ],
