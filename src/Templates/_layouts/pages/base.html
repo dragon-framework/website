@@ -1,29 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        {% block head %}
-            <link rel="stylesheet" href="style.css" />
-            <title>{% block title %}{% endblock %} - My Webpage</title>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        {% endblock %}
-    </head>
-    <body>
-
-        <header id="main-header">
+<html class="test">
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %} - My Webpage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+    {% endblock %}
+</head>
+<body class="">
+    <div class="wrap">
+        
+        
+		<!-- Main Header -->
+        <!--===================================================-->
+        <header id="main-header" class="main-header">
             {% block header %}
             {% include "_components/header.html" %}
             {% endblock %}
         </header>
-
-        <div id="main-content">
+        <!--===================================================-->
+        
+        
+		<!-- Main Content -->
+        <!--===================================================-->
+        <div id="main-content" class="main-content">
             {% block content %}{% endblock %}
         </div>
-
-        <footer id="main-footer">
+        <!--===================================================-->
+        
+        
+		<!-- Main Footer -->
+        <!--===================================================-->
+        <footer id="main-footer" class="main-footer">
             {% block footer %}
             {% include "_components/footer.html" %}
             {% endblock %}
         </footer>
-        
-    </body>
+        <!--===================================================-->
+
+    </div>
+
+    <!-- JavaScript -->
+    <!--===================================================-->
+
+    <script src="/assets/js/requestAnimationFrame.js"></script>
+    <script src="/assets/js/sticky.js"></script>
+    <script src="/assets/js/scrolled.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+
+    <!--===================================================-->
+
+</body>
 </html>

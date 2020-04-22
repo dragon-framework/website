@@ -1,0 +1,110 @@
+
+
+/*==========================*/
+/*== Wrapper ===============*/
+/*==========================*/
+
+html, body {
+    margin:0;
+    height:100%;
+    min-height:100%;
+}
+body {
+    margin:0;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+/*==========================*/
+/*== Main Header ===========*/
+/*==========================*/
+
+.main-header {
+    background-color: #ededed;
+    z-index: 999 !important;
+}
+.sticky-header .main-header {
+    position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.sticky-animation .main-header {
+    animation: stickAnim .3s;
+}
+
+
+/*== NavBar ================*/
+
+.navbar-nav {
+    border-radius: 0px;
+    padding: 20px 0px;
+    margin-bottom: 0px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.scrolled .navbar-nav {
+    padding: 0px 0px !important;
+}
+
+.navbar-nav li a {
+    color: #858585;
+    font-size: 15px;
+    margin: 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 15px !important;
+}
+
+.navbar-brand,
+.navbar-brand:hover, 
+.navbar-brand:active, 
+.navbar-nav li a:hover, 
+.navbar-nav li a:active, 
+.navbar-nav li.active a {
+    color: #f16000;
+}
+
+
+
+/*==========================*/
+/*== Main Content ==========*/
+/*==========================*/
+
+.main-content {
+    flex-grow: 1;
+}
+
+
+
+/*==========================*/
+/*== Main Footer ===========*/
+/*==========================*/
+
+.main-footer {
+}
+
+
+
+/*==========================*/
+/*== Animations ============*/
+/*==========================*/
+
+@keyframes stickAnim {
+	0% {
+		transform: translateY(-86px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
