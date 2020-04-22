@@ -1,6 +1,7 @@
 {% extends "_layouts/pages/base.html" %}
+{% set pageTitle = "Documentation" %}
 
-{% block title %}Doc{% endblock %}
+{% block title %}{{ pageTitle }}{% endblock %}
 
 {% block head %}
 {{parent()}}
@@ -57,6 +58,9 @@
 {% endblock %}
 
 {% block content %}
+
+{% include "_components/page-header.html" with {'title': pageTitle} %}
+
 <div class="container">
     <div class="row">
         <div class="col-3">

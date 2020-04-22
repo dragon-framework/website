@@ -2,60 +2,40 @@
 
 {% block title %}Index{% endblock %}
 
-{% block head %}
-    {{ parent() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
-{% endblock %}
-
 {% block content %}
-    <h1>Index</h1>
-    <p class="important">
-        Welcome to my awesome homepage.
-    </p>
 
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    <div>scroll... <br></div>
-    
+{% include "_components/carousel.html" %}
+
+
+<section class="section bg-gray bg-img bg-overlay" style="background-image: url(https://images.unsplash.com/photo-1586717799252-bd134ad00e26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);" data-aos="fade-up">
+    <div class="container">
+        
+        <header class="heading section-header">
+            <div class="heading-content">
+                <p class="heading-alt">lorem</p>
+                <h3 class="heading-title">Section Title</h3>
+                <p class="heading-lead">Lorem ipsum dolor sit amet <span class="colored">consectetur adipisicing</span> elit. Nihil, veritatis nostrum. Voluptas error fugiat facilis libero porro aperiam magnam ab veniam praesentium? Velit fugit aliquam assumenda facere illo illum unde.</p>
+            </div>
+        </header>
+        
+    </div>
+</section>
+
+{% for i in 0..5 %}
+
+<section class="section {% if i%2 != 0 %}bg-gray{% endif %}" data-aos="fade-up">
+    <div class="container">
+        
+        <header class="heading section-header">
+            <div class="heading-content">
+                <p class="heading-alt">lorem</p>
+                <h3 class="heading-title">Section Title</h3>
+                <p class="heading-lead">Lorem ipsum dolor sit amet <span class="colored">consectetur adipisicing</span> elit. Nihil, veritatis nostrum. Voluptas error fugiat facilis libero porro aperiam magnam ab veniam praesentium? Velit fugit aliquam assumenda facere illo illum unde.</p>
+            </div>
+        </header>
+        
+    </div>
+</section>
+{% endfor %}
+
 {% endblock %}

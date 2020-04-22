@@ -28,6 +28,18 @@ var scrolledAtPosition = 50;
 /* Events Trigger                                       */
 /* **************************************************** */
 
+/* On document loaded */
+window.addEventListener('load', function() {
+
+    /* Init Animate On Scroll */
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+
+});
+
+/* On document Scroll */
 window.addEventListener('scroll', function() {
 
     /* apply the Scrolled class */
