@@ -171,6 +171,22 @@ body {
 .security-footer .btn:hover {
     color: #343a40;
 }
+.security-copyright {
+    text-align: center;
+    color: #a7b4c4;
+    font-size: 12px;
+    font-weight: normal;
+
+    padding-top: .5rem;
+}
+.security-copyright a {
+    color: inherit;
+    transition: all .3s;
+}
+.security-copyright a:hover {
+    color: #343a40;
+    text-decoration: none;
+}
 
 .security-title {
     color: #343a40;

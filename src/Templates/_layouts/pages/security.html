@@ -16,7 +16,7 @@
 
 </head>
 <body>
-    <div class="security">
+    <div class="security" {% if not hasFlashBag() %}data-aos="fade-up"{% endif %}>
         <div class="container">
             <div class="row">
                 <div class="col-4 offset-4">
@@ -38,11 +38,30 @@
                         </div>
                         {% endif %}
                     </form>
+                    <div class="security-copyright">
+                        &copy; Copyright 2020 • <a href="{{ url('homepage') }}">back to homepage</a>
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
-    {% block content %}{% endblock %}
+
+
+    <!-- JavaScript -->
+    <!--===================================================-->
+
+    <!-- Vendor -->
+    <!-- ==================== -->
+
+    <!-- Animate On Scroll -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom Script -->
+    <!-- ==================== -->
+
+    <script src="/assets/js/script.js"></script>
+
+    <!--===================================================-->
 </body>
 </html>
