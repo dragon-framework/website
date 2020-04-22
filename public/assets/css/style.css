@@ -110,14 +110,12 @@ body {
 /*== Main Footer ===========*/
 /*==========================*/
 
-.main-footer {
-}
 .main-footer .footer-nav {
     padding-top: 60px;
     padding-bottom: 60px;
 }
 .main-footer .footer-copyright {
-
+    color: #9aa7af;
     font-size: 12px;
 }
 
@@ -264,7 +262,6 @@ h6, .h6 {
 
 .heading {
     display: block;
-    text-align: center;
 
     /* Content always in the middle */
     display: flex;
@@ -274,7 +271,26 @@ h6, .h6 {
 .heading-title {
     display: block;
     margin: 0;
+    position: relative;
 }
+.heading-title.with-border {
+    padding-bottom: 1rem;
+    margin-block-end: 1.5rem;
+}
+.heading-title.with-border::after {
+    --variable-width: 100px;
+
+    content: "";
+    background-color: #f16000;
+    height: 4px;
+    
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: var(--variable-width);
+    margin-left: 0;
+}
+
 .heading-alt {
     display: block;
     margin: 0;
@@ -283,14 +299,12 @@ h6, .h6 {
     font-weight: 500;
     letter-spacing: 2px;
 }
+
 .heading-lead {
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-
-    margin-left: auto;
-    margin-right: auto;
 
     width: 70%;
 }
@@ -298,6 +312,25 @@ h6, .h6 {
 .heading-alt,
 .heading .colored {
     color: #f16000;
+}
+
+
+
+.heading.text-center .heading-title.with-border::after {
+    left: 50%;
+    margin-left: calc((var(--variable-width) / 2) * -1);
+}
+.heading.text-right .heading-title.with-border::after {
+    left: auto;
+    right: 0;
+}
+
+.heading.text-center .heading-lead {
+    margin-left: auto;
+    margin-right: auto;
+}
+.heading.text-right .heading-lead {
+    margin-left: auto;
 }
 
 
@@ -381,6 +414,46 @@ h6, .h6 {
 
 .section {
     padding: 60px 0;
+}
+
+.section-content {
+    /* border: 1px solid red; */
+    padding-top: 2rem;
+}
+
+
+/*== Card =========*/
+
+.card,
+.card-header,
+.card-body,
+.card-footer {
+    background-color: transparent;
+    border: none;
+}
+.card {
+	min-height: 100%;
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5,
+.card-header h6 {
+    margin: 0;
+}
+
+.card-body {
+    color: #9aa7af;
+    transition: all .3s;
+}
+.card:hover .card-body {
+    color: #4c5667;
+}
+
+.card-body p:last-child {
+    margin-bottom: 0;
 }
 
 
