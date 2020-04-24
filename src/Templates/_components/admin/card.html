@@ -1,0 +1,29 @@
+{% set _card_header = block('card_title') %}
+{% set _card_body = block('card_body') %}
+{% set _card_footer = block('card_footer') %}
+
+{% if _card_header is not empty or _card_body is not empty or _card_footer is not empty %}
+<div class="card">
+
+    {% if _card_header is not empty %}
+    <div class="card-header">
+        <h6 class="card-title mr-auto">{% block card_title %}{% endblock %}</h6>
+        {% block card_actions %}{% endblock %}
+    </div>
+    {% endif %}
+
+    {% if _card_body is not empty %}
+    <div class="card-body">
+        {% block card_body %}{% endblock %}
+    </div>
+    {% endif %}
+
+    {% if _card_footer is not empty %}
+    <div class="card-footer">
+        {% block card_footer %}{% endblock %}
+    </div>
+    {% endif %}
+
+</div>
+{% endif %}
+

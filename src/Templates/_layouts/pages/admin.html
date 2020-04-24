@@ -15,7 +15,6 @@
     {% endblock %}
 </head>
 <body>
-    <div class="main-wrapper">
         
 		<!-- Main Header -->
         <!--===================================================-->
@@ -284,16 +283,11 @@
 		<!-- Main Content -->
         <!--===================================================-->
         <main id="main-content" class="main-content">
-
             {% include "_components/flashbag.html" %}
-
             <div id="router-outlet">{% block content %}{% endblock %}</div>
-
-
         </main>
         <!--===================================================-->
         
-    </div>
 
     <!-- JavaScript -->
     <!--===================================================-->

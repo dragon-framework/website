@@ -1,0 +1,11 @@
+
+        {% if actions is defined and actions %}
+        <div class="card-action dropdown ml-auto">
+            <a href="#" data-toggle="dropdown" class="card-action-btn"><i class="card-action-icon" data-feather="more-vertical"></i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+                {% for action in actions %}
+                <a class="dropdown-item" href="{{ action.link }}">{{ action.label }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
