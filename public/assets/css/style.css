@@ -1,5 +1,3 @@
-
-
 /*==========================*/
 /*== Wrapper ===============*/
 /*==========================*/
@@ -22,7 +20,7 @@ body {
     overflow-x: hidden;
 }
 
-.wrapper {
+.main-wrapper {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -74,9 +72,6 @@ body {
 }
 
 .navbar-brand
-/* ,
-.navbar-brand:hover, 
-.navbar-brand:active  */
 {
     /* color: #f16000;
     text-transform: uppercase;  */
@@ -86,6 +81,10 @@ body {
     color: #374760 !important;
     letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
+}
+.navbar-brand .colored
+{
+    color: #f16000 !important;
 }
 
 .navbar-nav li a:hover, 
@@ -110,16 +109,42 @@ body {
 /*== Main Footer ===========*/
 /*==========================*/
 
-.main-footer .footer-nav {
-    padding-top: 60px;
-    padding-bottom: 60px;
+.main-footer {
+    border-top: 1px solid #f5f5f5;
 }
-.main-footer .footer-copyright {
+.footer-nav {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.footer-copyright {
     color: #9aa7af;
     font-size: 12px;
 }
 
-.main-footer .footer-copyright .content {
+
+.footer-nav h5 {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.footer-nav ul {
+    margin-bottom: 0;
+}
+.footer-nav ul li {
+    margin: 5px 0px;
+}
+.footer-nav a {
+    color: #9aa7af;
+    transition: all .3s;
+}
+.footer-nav a:hover {
+    color: #f16000;
+    text-decoration: none;
+}
+
+.footer-copyright .content {
     border-top: 1px solid rgba(151, 160, 175, 0.2);
 
     padding-top: 20px;
@@ -441,10 +466,12 @@ h6, .h6 {
 .card-header h4,
 .card-header h5,
 .card-header h6 {
-    margin: 0;
+    margin: 1rem 0 0 0;
 }
 
 .card-body {
+    padding-top: 0;
+    /* padding-bottom: 0; */
     color: #9aa7af;
     transition: all .3s;
 }
