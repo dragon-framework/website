@@ -1,0 +1,20 @@
+/*==========================*/
+/*== Main Header ===========*/
+/*==========================*/
+
+.main-header {
+    background-color: #ededed;
+    z-index: 999 !important;
+}
+.sticky-header .main-header {
+    position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.sticky-animation .main-header {
+    animation: stickAnim .3s;
+}
+
+

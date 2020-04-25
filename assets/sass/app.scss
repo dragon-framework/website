@@ -1,3 +1,42 @@
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+/*
+
+// @import 'vendors/bootstrap';
+// @import 'vendors/jquery-ui';
+
+// @import 'base/reset';
+// @import 'base/typography';
+
+// @import 'layout/navigation';
+// @import 'layout/grid';
+*/
+@import './layout/navigation';
+@import './layout/header';
+@import './layout/sidebar';
+@import './layout/content';
+@import './layout/footer';
+/*
+// @import 'layout/forms';
+
+@import './components/flag/flag-icon';
+// @import 'components/buttons';
+// @import 'components/carousel';
+// @import 'components/slider';
+
+// @import 'pages/home';
+// @import 'pages/about';
+// @import 'pages/contact';
+
+@import './themes/light';
+@import './themes/dark';
+
+
+
+*/
+
+
 /*==========================*/
 /*== Common ================*/
 /*==========================*/
@@ -29,70 +68,7 @@ body {
 
 
 
-/*==========================*/
-/*== Main Header ===========*/
-/*==========================*/
 
-.main-header {
-    background-color: #ededed;
-    z-index: 999 !important;
-}
-.sticky-header .main-header {
-    position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-}
-.sticky-animation .main-header {
-    animation: stickAnim .3s;
-}
-
-
-/*== NavBar ================*/
-
-.navbar-nav {
-    border-radius: 0px;
-    padding: 20px 0px;
-    margin-bottom: 0px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-.scrolled .navbar-nav {
-    padding: 0px 0px !important;
-}
-
-.navbar-nav li a {
-    color: #858585;
-    font-size: 15px;
-    margin: 10px 0px;
-    font-family: 'Montserrat', sans-serif;
-    padding: 5px 15px !important;
-}
-
-.navbar-brand
-{
-    /* color: #f16000;
-    text-transform: uppercase;  */
-    text-transform: lowercase;
-    font-weight: 500;
-    font-size: 22px;
-    color: #374760 !important;
-    letter-spacing: 1px;
-    font-family: 'Montserrat', sans-serif;
-}
-.navbar-brand .colored
-{
-    color: #f16000 !important;
-}
-
-.navbar-nav li a:hover, 
-.navbar-nav li a:active, 
-.navbar-nav li.active a {
-    color: #f16000;
-}
 
 
 
@@ -106,51 +82,6 @@ body {
 
 
 
-/*==========================*/
-/*== Main Footer ===========*/
-/*==========================*/
-
-.main-footer {
-    border-top: 1px solid #f5f5f5;
-}
-.footer-nav {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-}
-.footer-copyright {
-    color: #9aa7af;
-    font-size: 12px;
-}
-
-
-.footer-nav h5 {
-    color: #333;
-    font-size: 15px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-.footer-nav ul {
-    margin-bottom: 0;
-}
-.footer-nav ul li {
-    margin: 5px 0px;
-}
-.footer-nav a {
-    color: #9aa7af;
-    transition: all .3s;
-}
-.footer-nav a:hover {
-    color: #f16000;
-    text-decoration: none;
-}
-
-.footer-copyright .content {
-    border-top: 1px solid rgba(151, 160, 175, 0.2);
-
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
 
 
