@@ -1,6 +1,6 @@
-"use strict";
+// "use strict";
 
-function scrolled() 
+window.scrolled = function() 
 {
     var el_html = document.documentElement;
     var el_body = document.getElementsByTagName('body')[0];
@@ -17,4 +17,4 @@ function scrolled()
     if ( wScrollTop < scrolledAtPosition && scrolledClassFound ) {
         el_html.className = el_html.className.replace('scrolled', '').trim();
     }
-}
+};

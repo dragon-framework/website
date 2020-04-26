@@ -1,9 +1,14 @@
-// https://www.alsacreations.com/tuto/lire/1754-debuter-avec-webpack.html
-// https://www.nobleui.com/html/template/demo_1/dashboard-one.html
-// https://feathericons.com/?query=ver
-
-// let a = "Haaaaaa!!!! !!"
-// alert(a);
+"use strict";
 
 
-// require("../sass/app.scss");
+/* **************************************************** */
+/* Events Trigger                                       */
+/* **************************************************** */
+
+/* On document loaded */
+window.addEventListener('load', function() {
+
+    /* Init feather Icon */
+    feather.replace()
+
+});

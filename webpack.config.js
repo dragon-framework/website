@@ -1,50 +1,202 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const GoogleFontsPlugin = require('google-fonts-plugin')
+
 const webpack = require("webpack");
 const path = require("path");
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// Extract CSS
-const extractCSS = new ExtractTextPlugin('./css/[name].min.css');
-
-
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const extractSass = new ExtractTextPlugin({
-//     filename: "[name].css",
-//     disable: process.env.NODE_ENV === "development"
-// });
-
 let config = {
+
+    /**
+     * Config file for webparts
+     */
     entry: {
-        app: "./assets/js/app.js",
-        admin: "./assets/js/admin.js",
-        security: "./assets/js/security.js",
+
+        /* Main website part */
+        main: "./assets/config/website.js",
+
+        /* Admin part */
+        admin: "./assets/config/admin.js",
+
+        /* Security forms part */
+        security: "./assets/config/security.js",
+
     },
+
+    /**
+     * Output files
+     */
     output: {
-        filename: "./js/[name].js",
-        path: path.resolve(__dirname, "./public/assets/")
+
+        /* The outpu directory */
+        path: path.resolve(__dirname, "public/assets/"),
+
+        /* JS files named by the entry key */
+        javascript: "js/[name].js",
+        /* JS files named by the entry key and hash */
+        // javascript: "js/[name].[chunkhash].js",
+
+        /* CSS files named by the entry key */
+        css: "./css/[name].min.css",
+
+        /* Fonts files */
+        fonts: "./fonts/[name].[ext]",
+        /* Fonts files with Hash */
+        // fonts: "./fonts/[name].[hash].[ext]",
+
+        /* Images files */
+        images: "images/[name].[ext]",
+
+    },
+
+    /**
+     * Plugin Providers
+     */
+    providers: [
+
+        /* Animate On Scroll */
+        new webpack.ProvidePlugin({
+            AOS: "Aos",
+            "window.AOS": "Aos"
+        }),
+    ],
+
+    /** Google fonts */
+    googleFonts: [
+            {
+                "family": "Roboto",
+                "variants": [
+                    "400",
+                    "300",
+                    "500",
+                    "700"
+                ]
+            },
+            {
+                "family": "Montserrat",
+                "variants": [
+                    "400",
+                    "700"
+                ]
+            },
+        ]
+};
+
+module.exports = {
+    entry: config.entry,
+    output: {
+        filename: config.output.javascript,
+        path: config.output.path
     },
     module: {
-        rules: [{
-        //     test: /\.js$/,
-        //     exclude: /node_modules/,
-        //     loader: "babel-loader"
-        // }, 
-        // {
-            test: /\.(css|scss)$/,
-            // loader: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
+        rules: [
+        
+            /* JavaScript rules */
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            
+            /* Styles rules */
+            {
+                test: /\.css|scss|sass$/,
+                use: [
+                    { 
+                        loader: MiniCssExtractPlugin.loader 
+                    },
+                    { 
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1
+                        }
+                    }, 
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true,
+                            config: {
+                                ctx: {
+                                    cssnano: {},
+                                    autoprefixer: {}
+                                }
+                            }
+                        }
+                    },
+                    {
+                        loader: "resolve-url-loader"
+                    },
+                    { 
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
+            },
 
-            use: extractCSS.extract([
-                'css-loader',
-                'sass-loader',
-                'postcss-loader'
-            ])
-        }]
+            /* Fonts rule */
+            {
+                test: /\.(eot|ttf|woff|woff2)$/,
+                loader: "file-loader",
+                options: {
+                    name: config.output.fonts,
+                }
+            },
+	
+            /* Images rule */
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    // {
+                    //     loader: "file-loader",
+                    //     options: { 
+                    //         limit: 0, // Convert images < 8kb to base64 strings
+                    //         // name: config.output.images
+                    //     } 
+                    // },
+                    { 
+                        loader: "image-webpack-loader"
+                    },
+                    {
+                        loader: 'url-loader',
+                        options: { 
+                            limit: 8000, // Convert images < 8kb to base64 strings
+                            name: config.output.images
+                        } 
+                    }
+                ],
+            },
+        ]
     },
 
-    plugins: [
-        extractCSS
-    ]
-}
+    plugins: Object.assign([
+        new webpack.ProgressPlugin(),
+        new CleanWebpackPlugin(),
+
+        new MiniCssExtractPlugin({
+            filename: config.output.css
+        }),
+        
+        new GoogleFontsPlugin({
+            fonts: config.googleFonts,
+            
+            /* Google Fonts files */
+            filename: "../../assets/fonts/google-fonts/[name].css",
+            // filename: ".fonts/google-fonts/[name].css",
+        }),
+
+        // new HtmlWebpackPlugin({
+        //     inject: false,
+        //     hash: true,
+        //     title: 'Custom template',
+        //     template: "./src/index.html",
+        //     filename: "index.html"
+        // }),
+
+    ], config.providers)
+}; 
   
- 
-  
-module.exports = config;

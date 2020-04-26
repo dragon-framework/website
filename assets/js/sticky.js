@@ -1,6 +1,6 @@
 "use strict";
 
-function sticky()
+window.sticky = function ()
 {
     var el_html = document.documentElement;
     var el_body = document.getElementsByTagName('body')[0];

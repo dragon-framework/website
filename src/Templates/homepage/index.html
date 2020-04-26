@@ -21,6 +21,7 @@
     </div>
 </section>
 
+
 {% for i in 0..5 %}
 
 <section class="section {% if i%2 != 0 %}bg-gray{% endif %}" data-aos="fade-up">
@@ -41,7 +42,8 @@
 
                     <div class="card text-center">
                         <div class="card-header">
-                            <img src="/assets/images/space-rocket.svg" width="48" alt="">
+                            <img data-img="space-rocket.svg" width="48" alt="">
+                            {# <img src="assets/images/space-rocket.svg" width="48" alt=""> #}
                             <h4>Card title</h4>
                         </div>
                         <div class="card-body">

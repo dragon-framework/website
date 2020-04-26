@@ -1,0 +1,104 @@
+/*==========================*/
+/*== Headings ==============*/
+/*==========================*/
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2, .h2 {
+    font-size: 30px;
+}
+h3, .h3 {
+    font-size: 24px;
+}
+h4, .h4 {
+    font-size: 18px;
+}
+h5, .h5 {
+    font-size: 14px;
+}
+h6, .h6 {
+    font-size: 12px;
+}
+
+.heading {
+    display: block;
+
+    /* Content always in the middle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading-title {
+    display: block;
+    margin: 0;
+    position: relative;
+}
+.heading-title.with-border {
+    padding-bottom: 1rem;
+    margin-block-end: 1.5rem;
+}
+.heading-title.with-border::after {
+    --variable-width: 100px;
+
+    content: "";
+    background-color: #f16000;
+    height: 4px;
+    
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: var(--variable-width);
+    margin-left: 0;
+}
+
+.heading-alt {
+    display: block;
+    margin: 0;
+
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.heading-lead {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    width: 70%;
+}
+
+.heading-alt,
+.heading .colored {
+    color: #f16000;
+}
+
+
+
+.heading.text-center .heading-title.with-border::after {
+    left: 50%;
+    margin-left: calc((var(--variable-width) / 2) * -1);
+}
+.heading.text-right .heading-title.with-border::after {
+    left: auto;
+    right: 0;
+}
+
+.heading.text-center .heading-lead {
+    margin-left: auto;
+    margin-right: auto;
+}
+.heading.text-right .heading-lead {
+    margin-left: auto;
+}
