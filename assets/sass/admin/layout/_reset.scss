@@ -1,0 +1,40 @@
+// Common Body definition
+// ========================================
+
+html {
+    margin: 0;
+
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    // color: $east-bay;
+    font-family: $font-family-roboto;
+    font-size: $font-size-normal;
+    line-height: $line-height-normal;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: inherit;
+
+    height: inherit;
+    min-height: inherit;
+
+    overflow-x: hidden;
+}
+
+
+// html, body {
+//     background: #f9fafb;
+
+// }
+// body {
+//     color: #4c5667;
+// }
+
+
+a, a[data-href] {
+    cursor: pointer;
+}

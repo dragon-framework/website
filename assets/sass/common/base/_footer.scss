@@ -1,0 +1,64 @@
+/*======================================*/
+/* Common Footer                        */
+/*======================================*/
+
+
+// Main Footer (base)
+// ------------------
+
+.main-footer {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $white-smoke;
+}
+
+
+// Footer Nav row
+// ------------------
+
+.footer-nav {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.footer-nav h5 {
+    color: $night-rider;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.footer-nav ul {
+    margin-bottom: 0;
+}
+.footer-nav ul li {
+    margin: 5px 0px;
+}
+.footer-nav a {
+    color: $nepal;
+    transition: all .3s;
+}
+.footer-nav a:hover {
+    color: $persimmon;
+    text-decoration: none;
+}
+
+
+// Footer Copyright row
+// ------------------
+
+.footer-copyright {
+    color: $nepal;
+    font-size: 12px;
+}
+
+
+
+.footer-copyright .content {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $limerick-20;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

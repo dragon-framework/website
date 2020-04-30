@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <a class="navbar-brand" href="{{ url('homepage') }}">Ash<span class="colored">way</span></a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav">
+                <li class="nav-item {{ isRouteActive('books:index') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('books:index') }}">Books</a>
+                </li>
+                <li class="nav-item {{ isRouteActive('_doc:index') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_doc:index') }}">Doc</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin:dashboard') }}">Admin</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+            {% if isAnonymous() %}
+                <li class="nav-item {{ isRouteActive('_login') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_login') }}">Login</a>
+                </li>
+                <li class="nav-item {{ isRouteActive('_register') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_register') }}">Register</a>
+                </li>
+            {% else %}
+                <li class="nav-item {{ isRouteActive('profile') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('profile') }}">{{ user().screenname }}</a>
+                </li>
+                <li class="nav-item {{ isRouteActive('_logout') ? "active" : null }}">
+                    <a class="nav-link" href="{{ url('_logout') }}">Logout</a>
+                </li>
+            {% endif %}
+            </ul>
+        </div>
+
+    </div>
+</nav>

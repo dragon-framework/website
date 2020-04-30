@@ -1,0 +1,40 @@
+// Mixins
+// ========================================
+
+/**
+ * Background Image
+ */
+@mixin background-image($src) {
+    background-image: url($src);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/**
+ * Inner content
+ */
+@mixin inner-content($padding) {
+    padding: $padding;
+    overflow: hidden;
+}
+
+/**
+ * 0.3s transition
+ */
+@mixin transition3($type: linear) {
+    -webkit-transition: all .3s $type;
+    -moz-transition: all .3s $type;
+    -ms-transition: all .3s $type;
+    -o-transition: all .3s $type;
+    transition: all .3s $type;
+}
+
+/**
+ * transition of backgroud-color
+ */
+@mixin background-color-transition() {
+    -webkit-transition: background-color .3s linear;
+    -ms-transition: background-color .3s linear;
+    transition: background-color .3s linear;
+}

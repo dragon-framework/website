@@ -1,0 +1,21 @@
+// Pages Books
+// ========================================
+
+.books-index {
+
+    table {
+        margin: 0;
+    }
+
+    th:first-child,
+    td:first-child {
+        text-align: center;
+        width: 30px;
+    }
+
+    th.actions,
+    td.actions {
+        text-align: right;
+        width: 100px;
+    }
+}

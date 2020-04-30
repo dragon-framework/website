@@ -1,0 +1,262 @@
+// Abstracts
+// ========================================
+
+/* Colors */
+@import './../common/abstracts/colors';
+// @import './abstracts/colors';
+
+/* Variables */
+@import './../common/abstracts/variables';
+// @import './abstracts/variables';
+
+/* Functions */
+@import './../common/abstracts/functions';
+
+/* Mixins */
+@import './../common/abstracts/mixins';
+
+
+
+// Layout
+// ========================================
+
+/* All Elements */
+@import './../common/layout/*';
+
+/* Wrapper */
+@import './../common/layout/wrapper';
+// @import './layout/wrapper';
+
+/* Grid */
+// @import './../common/layout/grid';
+// @import './layout/grid';
+
+
+
+// Base
+// ========================================
+
+/* Header */
+@import './../common/base/header';
+// @import './base/header';
+
+/* Sidebar */
+// @import './../common/base/sidebar';
+// @import './base/sidebar';
+
+/* Content */
+@import './../common/base/content';
+// @import './base/content';
+
+/* Footer */
+@import './../common/base/footer';
+// @import './base/footer';
+
+
+
+// Components
+// ========================================
+
+/* Alerts */
+// @import './../common/components/alerts';
+// @import './components/alerts';
+
+/* Badge */
+// @import './../common/components/badge';
+// @import './components/badge';
+
+/* Breadcrumb */
+// @import './../common/components/breadcrumb';
+// @import './components/breadcrumb';
+
+/* Buttons */
+// @import './../common/components/buttons';
+// @import './components/buttons';
+
+/* Card */
+// @import './../common/components/card';
+// @import './components/card';
+
+/* Carousel */
+// @import './../common/components/carousel';
+// @import './components/carousel';
+
+/* Collapse */
+// @import './../common/components/collapse';
+// @import './components/collapse';
+
+/* Dropdowns */
+// @import './../common/components/dropdowns';
+// @import './components/dropdowns';
+
+/* Forms */
+// @import './../common/components/forms';
+// @import './components/forms';
+
+/* Headings */
+// @import './../common/components/headings';
+// @import './components/headings';
+
+/* Jumbotron */
+// @import './../common/components/jumbotron';
+// @import './components/jumbotron';
+
+/* List group */
+// @import './../common/components/list';
+// @import './components/list';
+
+/* Media object */
+// @import './../common/components/media-object';
+// @import './components/media-object';
+
+/* Modal */
+// @import './../common/components/modal';
+// @import './components/modal';
+
+/* Navbar */
+// @import './../common/components/navbar';
+// @import './components/navbar';
+
+/* Overlay */
+// @import './../common/components/overlay';
+// @import './components/overlay';
+
+/* Pagination */
+// @import './../common/components/pagination';
+// @import './components/pagination';
+
+/* Popovers */
+// @import './../common/components/popovers';
+// @import './components/popovers';
+
+/* Progress */
+// @import './../common/components/progress';
+// @import './components/progress';
+
+/* Toasts */
+// @import './../common/components/toasts';
+// @import './components/toasts';
+
+/* Tooltips */
+// @import './../common/components/tooltips';
+// @import './components/tooltips';
+
+
+
+// Pages
+// ========================================
+
+/* @import 'pages/home'; */
+/* @import 'pages/about'; */
+/* @import 'pages/contact'; */
+
+
+
+// Themes
+// ========================================
+
+/* Light Theme */
+@import './../website/themes/light';
+
+/* Dark Theme */
+@import './../website/themes/dark';
+
+
+
+
+
+
+
+/*==========================*/
+/*== Security Screens ======*/
+/*==========================*/
+
+.security {
+    height:100%;
+    min-height:100%;
+
+    /* Content always in the middle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.security-content {
+    background-color: #fafafa !important;
+    border: 1px solid #f5f5f5 !important;
+
+    border-radius: 4px;
+}
+.security-header {
+    padding: 1rem;
+    text-align: center;
+}
+.security-body {
+    padding: 1rem;
+}
+.security-footer {
+    border-top: 1px solid #f5f5f5;
+    padding: 0.5rem;
+    text-align: center;
+    color: #a7b4c4;
+}
+.security-footer .btn {
+    color: #a7b4c4;
+    font-size: 13px;
+    font-weight: normal;
+}
+.security-footer .btn:hover {
+    color: #343a40;
+}
+.security-copyright {
+    text-align: center;
+    color: #a7b4c4;
+    font-size: 12px;
+    font-weight: normal;
+
+    padding-top: .5rem;
+}
+.security-copyright a {
+    color: inherit;
+    transition: all .3s;
+}
+.security-copyright a:hover {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.security-title {
+    color: #343a40;
+    margin: 0;
+}
+.security-lead {
+    color: #a7b4c4;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.security .alert {
+    font-size: 13px;
+    padding: .4rem 1rem;
+    border-radius: 3px;
+}
+
+.security .form-control {
+    height: 33px;
+    font-size: 13px;
+    border-radius: 3px;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.07);
+    transition-duration: .5s;
+}
+.security .form-control::placeholder {
+    color: #a7b4c4;
+    opacity: 1;
+}
+.security .form-control:-ms-input-placeholder {
+    color: #a7b4c4;
+}
+.security .form-control::-ms-input-placeholder {
+    color: #a7b4c4;
+}

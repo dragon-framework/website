@@ -26,6 +26,16 @@
     
     
     /* **************************************************** */
+    /* Scrolled Class                                       */
+    /* **************************************************** */
+    window.aosConfig = {
+        duration: 800,
+        once: true,
+    };
+    
+    
+    
+    /* **************************************************** */
     /* Events Trigger                                       */
     /* **************************************************** */
     
@@ -33,10 +43,7 @@
     window.addEventListener('load', function() {
     
         /* Init Animate On Scroll */
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
+        AOS.init(aosConfig);
     
     });
     

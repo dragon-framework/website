@@ -1,0 +1,99 @@
+// Overlay
+// ========================================
+
+.overlay {
+    position: relative;
+}
+.overlay * {
+    z-index: 1;
+}
+.overlay::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 0;
+}
+
+
+// Overlay Color
+// ------------------
+
+/* ligth */
+.overlay-light::after {
+    background-color: $white;
+}
+
+/* dark */
+.overlay-dark::after {
+    background-color: $black;
+}
+
+
+// Overlay Opacity
+// ------------------
+
+.overlay-100::after {
+    opacity: 1;
+}
+.overlay-95::after {
+    opacity: .95;
+}
+.overlay-90::after {
+    opacity: .90;
+}
+.overlay-85::after {
+    opacity: .85;
+}
+.overlay-80::after {
+    opacity: .80;
+}
+.overlay-75::after {
+    opacity: .75;
+}
+.overlay-70::after {
+    opacity: .70;
+}
+.overlay-65::after {
+    opacity: .65;
+}
+.overlay-60::after {
+    opacity: .60;
+}
+.overlay-55::after {
+    opacity: .55;
+}
+.overlay-50::after {
+    opacity: .50;
+}
+.overlay-45::after {
+    opacity: .45;
+}
+.overlay-40::after {
+    opacity: .40;
+}
+.overlay-35::after {
+    opacity: .35;
+}
+.overlay-30::after {
+    opacity: .30;
+}
+.overlay-25::after {
+    opacity: .25;
+}
+.overlay-20::after {
+    opacity: .20;
+}
+.overlay-15::after {
+    opacity: .15;
+}
+.overlay-10::after {
+    opacity: .10;
+}
+.overlay-05::after {
+    opacity: .05;
+}
+.overlay-0::after {
+    opacity: 0;
+}

@@ -1,0 +1,15 @@
+// Component : Carousel
+// ========================================
+
+
+// Indicators
+// ------------------
+
+.carousel-indicators li {
+    @include transition3();
+}
+.carousel-indicators li.active {
+    width: 50px;
+
+    @include transition3();
+}

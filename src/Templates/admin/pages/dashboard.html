@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container-fluid">
+
+        <div class="heading">
+            Welcome {{ user().firstname }}
+        </div>
+
+    </div>
+</header>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row grid-margin">
+            <div class="col-4">
+        
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}New customers{% endblock %}
+                    {% block card_body %}-{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-4">
+        
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}New Orders{% endblock %}
+                    {% block card_body %}-{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-4">
+        
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}Growth{% endblock %}
+                    {% block card_body %}-{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+        </div>
+
+
+
+
+        <div class="row grid-margin">
+            <div class="col-4">
+        
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_actions %}
+                        {% include "components/card-actions.html" with {
+                            actions: [
+                                {
+                                    label: "Hello",
+                                    link: "#"
+                                },
+                                {
+                                    label: "Goodbye",
+                                    link: "#"
+                                }
+                            ]} only %}
+                    {% endblock %}
+                    {% block card_body %}block body{% endblock %}
+                    {% block card_footer %}block footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-4">
+        
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}body<br>block body<br>{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-4">
+        
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+        </div>
+    
+        <div class="row grid-margin">
+            <div class="col-12">
+                
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+        </div>
+    
+        <div class="row grid-margin">
+            <div class="col-7">
+                
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-5">
+                
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+        </div>
+    
+        <div class="row grid-margin">
+            <div class="col-3">
+                
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-6">
+                
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+            <div class="col-3">
+                
+                <!-- Card xx -->
+                <!--===================================================-->
+                {% embed "components/card.html" %}
+                    {% block card_title %}block title{% endblock %}
+                    {% block card_body %}block body<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block bodybody<br>block body<br>block body<br>block body<br>{% endblock %}
+                    {% block card_footer %}Footer{% endblock %}
+                {% endembed  %}
+                <!--===================================================-->
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="page-footer">
+    <div class="container-fluid">
+
+        Page Footer
+
+    </div>
+</footer>
+
+{% endblock %}

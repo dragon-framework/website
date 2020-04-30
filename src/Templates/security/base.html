@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %}</title>
+
+        {# <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css"> #}
+        <link rel="stylesheet" type="text/css" href="/assets/css/security.min.css">
+
+    {% endblock %}
+
+</head>
+<body>
+    <div class="security" {% if not hasFlashBag() %}data-aos="fade-up"{% endif %}>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-4">
+
+                    <form class="security-content" method="post" novalidate="novalidate">
+                        <div class="security-header">
+                            {% block security_header %}{% endblock %}
+                        </div>
+                        
+                        <div class="security-body">
+                            {% include "components/flashbag.html" %}
+                            {% block security_form %}{% endblock %}
+                        </div>
+
+                        {% set _security_footer = block('security_footer') %}
+                        {% if _security_footer is not empty %}
+                        <div class="security-footer">
+                            {{ _security_footer|raw }}
+                        </div>
+                        {% endif %}
+                    </form>
+                    <div class="security-copyright">
+                        &copy; Copyright 2020 • <a href="{{ url('homepage') }}">back to homepage</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{# 
+    <!-- JavaScript -->
+    <!--===================================================-->
+
+    <!-- Vendor -->
+    <!-- ==================== -->
+
+    <!-- Animate On Scroll -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom Script -->
+    <!-- ==================== -->
+
+    <script src="/assets/js/script.js"></script>
+
+    <!--===================================================--> #}
+
+    <!-- JavaScript -->
+    <!--===================================================-->
+    <script src="/assets/js/security.js"></script>
+</body>
+</html>

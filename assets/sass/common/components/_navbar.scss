@@ -1,0 +1,45 @@
+/*==========================*/
+/*== Navigation ============*/
+/*==========================*/
+
+.navbar-nav {
+    border-radius: 0px;
+    padding: 20px 0px;
+    margin-bottom: 0px;
+    @include transition3(ease-in-out)
+}
+.scrolled .navbar-nav {
+    padding: 0px 0px !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: $grey;
+    font-size: 15px;
+    margin: 10px 0px;
+    font-family: $font-family-montserrat;
+    padding: 5px 15px !important;
+
+    @include transition3();
+}
+
+.navbar-brand
+{
+    /* color: $persimmon;
+    text-transform: uppercase;  */
+    text-transform: lowercase;
+    font-weight: 500;
+    font-size: 22px;
+    color: $gulf-blue !important;
+    letter-spacing: 1px;
+    font-family: $font-family-montserrat;
+}
+.navbar-brand .colored
+{
+    color: $persimmon !important;
+}
+
+.navbar-nav .nav-item .nav-link:hover, 
+.navbar-nav .nav-item .nav-link:active, 
+.navbar-nav .nav-item.active .nav-link {
+    color: $persimmon;
+}

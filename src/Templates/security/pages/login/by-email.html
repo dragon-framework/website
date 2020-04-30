@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-4 offset-4">
+
+        {% if flashdata['login-state'] is defined %}
+            
+            <h3>A login email is on the way</h3>
+
+            <p>Click on the secure login link in the email to access your account.</p>
+            <p>Don't see the email? Be sure to check your spam folder or <a href="{{ url('_login') }}">click here to try again</a>.</p>
+
+        {% else %}
+
+            <h3>Log in to your account</h3>
+
+            <p>You will receive an email momentarily with a secure login link.</p>
+            
+            <form method="POST">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Enter your email">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Log in</button>
+            </form>
+
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

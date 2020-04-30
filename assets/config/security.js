@@ -1,9 +1,55 @@
-// https://www.alsacreations.com/tuto/lire/1754-debuter-avec-webpack.html
-// https://www.nobleui.com/html/template/demo_1/dashboard-one.html
-// https://feathericons.com/?query=ver
+// Stylesheets
+// ========================================
 
-// let a = "Haaaaaa!!!! !!"
-// alert(a);
+// vendor
+// --------------------
+
+// Google Fonts
+require("../fonts/google-fonts/woff.css");
+require("../fonts/google-fonts/woff2.css");
 
 
-// require("../sass/app.scss");
+// Bootstrap
+require("../../node_modules/bootstrap/dist/css/bootstrap.css");
+
+// Animate On Scroll
+require("../../node_modules/aos/dist/aos.css");
+
+
+// Custom Style
+// --------------------
+
+require("../sass/security/base.scss");
+
+
+// Scripts
+// ========================================
+
+// vendor
+// --------------------
+
+// jQuery
+require("jquery");
+
+// Popper JS
+require("popper.js");
+
+// Bootstrap 4
+require("bootstrap");
+
+// Animate On Scroll
+require("aos");
+
+// feather icons
+require("feather-icons");
+
+
+// Custom Scripts
+// --------------------
+
+require("../js/requestAnimationFrame.js");
+require("../js/sticky.js");
+require("../js/scrolled.js");
+require("../js/dynamicImages.js");
+
+require("../js/script.js");

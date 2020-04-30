@@ -53,14 +53,22 @@ let config = {
     /**
      * Plugin Providers
      */
-    providers: [
+    providers: {
 
         /* Animate On Scroll */
-        new webpack.ProvidePlugin({
-            AOS: "Aos",
-            "window.AOS": "Aos"
-        }),
-    ],
+        AOS: "Aos",
+        "window.AOS": "Aos",
+        
+        /* Feather Icons */
+        feather: "feather-icons",
+        "window.feather": "feather-icons",
+
+        /* jQuery */
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+
+    },
 
     /** Google fonts */
     googleFonts: [
@@ -164,7 +172,8 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: { 
-                            limit: 8000, // Convert images < 8kb to base64 strings
+                            // limit: 8000, // Convert images < 8kb to base64 strings
+                            limit: 1000000,
                             name: config.output.images
                         } 
                     }
@@ -173,7 +182,8 @@ module.exports = {
         ]
     },
 
-    plugins: Object.assign([
+    // plugins: Object.assign([
+    plugins: [
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
 
@@ -189,6 +199,8 @@ module.exports = {
             // filename: ".fonts/google-fonts/[name].css",
         }),
 
+        new webpack.ProvidePlugin( config.providers ),
+
         // new HtmlWebpackPlugin({
         //     inject: false,
         //     hash: true,
@@ -197,6 +209,7 @@ module.exports = {
         //     filename: "index.html"
         // }),
 
-    ], config.providers)
+    ]
+    // , config.providers)
 }; 
   

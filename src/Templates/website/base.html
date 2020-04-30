@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %} - My Webpage</title>
+        <link rel="shortcut icon" data-img="space-rocket.svg" type="image/svg">
+        <link rel="stylesheet" type="text/css" href="/assets/css/main.min.css">
+    {% endblock %}
+</head>
+<body class="">
+    <div class="main-wrapper">
+        
+        
+		<!-- Main Header -->
+        <!--===================================================-->
+        <header id="main-header" class="main-header">
+            {% block header %}
+            {% include "components/header.html" %}
+            {% endblock %}
+        </header>
+        <!--===================================================-->
+        
+        
+		<!-- Main Content -->
+        <!--===================================================-->
+        <div id="main-content" class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+        <!--===================================================-->
+        
+        
+		<!-- Main Footer -->
+        <!--===================================================-->
+        <footer id="main-footer" class="main-footer">
+            {% block footer %}
+            {% include "components/footer.html" %}
+            {% endblock %}
+        </footer>
+        <!--===================================================-->
+
+    </div>
+
+    <!-- JavaScript -->
+    <!--===================================================-->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+</html>

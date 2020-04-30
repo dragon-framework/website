@@ -6,7 +6,8 @@
   "author": "Arnaud BODEL <contact@osw3.net>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --watch --mode='development'",
+    "dev": "webpack --mode='development'",
+    "_dev": "webpack --watch --mode='development'",
     "build": "webpack --mode='production'"
   },
   "devDependencies": {
@@ -34,8 +35,9 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^4.4.1",
+    "feather-icons": "^4.28.0",
     "google-fonts-plugin": "^5.0.2",
-    "jquery": "^3.5.0",
+    "jquery": "^3.4.1",
     "popper.js": "^1.16.1"
   }
 }

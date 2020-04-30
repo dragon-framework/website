@@ -1,268 +1,262 @@
 "use strict";
 
-// https://developer.mozilla.org/en-US/docs/Web/API/History_API/Example
-(function(){
+import { HttpFoundation } from './HttpFoundation';
 
-    var debug = false;
+// const HttpFoundation = require('./HttpFoundation.js')
 
-    var attrHref = "data-href";
-    var attrType = "data-type";
-    var routerOutlet = "router-outlet";
-    var links = document.querySelectorAll("a["+attrHref+"]");
-
-    window.onpopstate = function(event) {
-        
-        ajax({
-            method: "GET", 
-            url: event.state.url,
-            onStart: function(){
-                changeState(event.state.url, event.state.title);
-            },
-            onSuccess: function(response) {
-                
-                var html  = new DOMParser().parseFromString(response, "text/html");
-                var title = html.title;
-                
-                changeState(event.state.url, title);
-
-                try {
-                    var segment = html.getElementById(routerOutlet).innerHTML;
-                }
-                catch(e){
-                    var segment = response;
-                }
-
-                document.getElementById(routerOutlet).innerHTML = segment;
-            }
-        });
-      };
-
-    links.forEach(function(link) {
+/**
+ * 
+ * Add clickable elements
+ * -- 
+ * let http = new AsyncNav({ elements: ['tr'] });
+ * http.elements = ['tr'];
+ * 
+ */
+export class AsyncNavigation {
     
-        link.addEventListener('click', function() {
-    
-            let url = this.getAttribute(attrHref);
-            let contentType = this.getAttribute(attrType) || "text/html";
-            
-            ajax({
-                method: "GET", 
-                url: url,
-                onStart: function(){
-                    changeState(url, "-");
-                },
-                onSend: function(){
-                },
-                onHeaders: function(type){
-                },
-                onLoading: function(){
-                },
-                onSuccess: function(response) {
-                    
-                    var html  = new DOMParser().parseFromString(response, contentType);
-                    var title = html.title;
-                    
-                    changeState(url, title);
-    
-                    try {
-                        var segment = html.getElementById(routerOutlet).innerHTML;
-                    }
-                    catch(e){
-                        var segment = response;
-                    }
-
-                    document.getElementById(routerOutlet).innerHTML = segment;
-                    
-                },
-                onFail: function(response, code) {
-                },
-                onDone: function(response, code) {
-                }
-            });
-
-            return false;
-        });
-    });
-
-
-    /**
-     * 
-     * @param {*} options 
-     * 
-     * Options :
-     * onStart
-     * onOpen
-     * onSend
-     * onHeaders
-     * onSuccess
-     * onFail
-     * onDone
-     */
-    function ajax( options ) 
+    constructor( options ) 
     {
-        var _options = Object.assign({
-            method: "GET",
-            url: null,
-            onStart: function(){
-                return false;
-            },
-            onSend: function(){
-                return false;
-            },
-            onHeaders: function( type ){
-                return false;
-            },
-            onLoading: function(){
-                return false;
-            },
-            onSuccess: function( response, code ){
-                return false;
-            },
-            onFail: function( response, code ){
-                return false;
-            },
-            onDone: function( response, code ){
-                return false;
-            },
-        }, options);
+        // Plugin Options
+        // --
 
+        /* Defaults plugin Options */
+        this.options = {
+            elements: []
+        };
 
-        if ("function" == typeof(_options.onStart))
+        /* Merge Options with custom options */
+        if (typeof options === "object")
         {
-            _options.onStart();
-        }
-    
-        if (debug)
-        {
-            console.info('xhr : Started...');
-            console.info('xhr : -> Query Method : '+ _options.method);
-            console.info('xhr : -> Query URL : '+ _options.url);
+            this.options = Object.assign(this.options, options);
         }
 
-        var xhr = createXhrObject();
 
-        if (xhr)
-        {
-            if (debug)
-            {
-                console.info('xhr : Initialized...');
-            }
-    
-            xhr.onreadystatechange = function() 
-            {
-                if (this.readyState == 1)
-                {
-                    if ("function" == typeof(_options.onSend))
-                    {
-                        _options.onSend();
-                    }
-    
-                    if (debug)
-                    {
-                        console.info('xhr : Query sended...');
-                    }
-                }
-                else if (this.readyState == 2)
-                {
-                    if ("function" == typeof(_options.onHeaders))
-                    {
-                        _options.onHeaders( xhr.getResponseHeader("Content-Type") );
-                    } 
-    
-                    if (debug)
-                    {
-                        console.info('xhr : Headers recieved...');
-                    }
-                }
-                else if (this.readyState == 3)
-                {
-                    if ("function" == typeof(_options.onLoading))
-                    {
-                        _options.onLoading();
-                    }
-    
-                    if (debug)
-                    {
-                        console.info('xhr : Loading response...');
-                    }
-                }
-                else if (this.readyState == 4)
-                {
-                    if (debug)
-                    {
-                        console.info('xhr : Response recieved.');
-                    }
-    
-                    if (this.status == 200) 
-                    {
-                        if ("function" == typeof(_options.onSuccess))
-                        {
-                            _options.onSuccess( this.responseText, this.status );
-                        }
-    
-                        if (debug)
-                        {
-                            console.info('xhr state : Success');
-                        }
-                    }
-                    else
-                    {
-                        if ("function" == typeof(_options.onFail))
-                        {
-                            _options.onFail( this.responseText, this.status );
-                        }
-    
-                        if (debug)
-                        {
-                            console.warn('xhr state : Fail');
-                        }
-                    }
-                    
-                    if ("function" == typeof(_options.onDone))
-                    {
-                        _options.onDone( this.responseText, this.status );
-                    }
-    
-                    if (debug)
-                    {
-                        console.info('xhr Status : '+ this.status);
-                    }
-                }
-            };
-    
-            xhr.open(_options.method, _options.url, true);
-            xhr.send();
-        }
+        // Allowed Clickable Elements
+        // --
+
+        /* Default clickable elements */
+        this._elements = ['a'];
+
+        /* Add clickable element by constructor options */
+        this.elements = this.options.elements;
+
+
+        // Links list
+        this._links = [];
+
+        
+
+        this._debug = false;
+        this._dataHref = "data-href";
+        this._dataMethod = "data-method";
+        this._dataType = "data-type";
+        this._dataTarget = "data-target";
+
+        this._defaultMethod = "get";
+        this._defaultType = "text/html";
+        this._defaultTarget = "router-outlet";
+        
+        this.refresh();
     }
 
     /**
-     * Create XHR object
+     * Get allowed clickable elements
      */
-    function createXhrObject() 
+    get elements()
     {
-        if (window.XMLHttpRequest)
-        {
-            return new XMLHttpRequest();
-        }
+        return this._elements;
+    }
 
-        if (window.ActiveXObject)
-        {
-            var names = [
-                "Msxml2.XMLHTTP.6.0",
-                "Msxml2.XMLHTTP.3.0",
-                "Msxml2.XMLHTTP",
-                "Microsoft.XMLHTTP"
-            ];
-            for(var i in names)
-            {
-                try{ 
-                    return new ActiveXObject(names[i]); 
-                }
-                catch(e){}
-            }
+    /**
+     * Set / Add to allowed clickable elements
+     */
+    set elements( elements )
+    {
+        this._elements = this._elements.concat( elements );
+    }
+
+
+    /**
+     * Set clickable links
+     */
+    set links(links)
+    {
+        links.forEach( link => { this._links.push( link ); } );
+    }
+
+
+    refresh() {
+
+        var that = this;
+
+        // Build QuerySelector list
+        this.elements.forEach( element => {
             
-        }
+            let selector = element.concat(`[${this._dataHref}]`);
+            this.links = document.querySelectorAll( selector );
+            
+        });
+
+        // Click event
+        this._links.forEach( link => {
+
+            // Add css cursor
+            link.style.cursor = "pointer";
+
+            // Click on link
+            link.addEventListener('click', event => {
+
+                event.preventDefault();
+                event.stopImmediatePropagation();
+
+                let url = link.getAttribute( this._dataHref );
+                let method = link.getAttribute( this._dataMethod ) || this._defaultMethod;
+                let type = link.getAttribute( this._dataType ) || this._defaultType;
+                let target = link.getAttribute( this._dataTarget ) || this._defaultTarget;
+                
+                // Prevent click on same URL
+                if (window.location.href == url || window.location.pathname == url)
+                {
+                    return false;
+                }
+
+                let http = new HttpFoundation;
+                http.request( that._requestParameters({
+                    url: url,
+                    method: method,
+                    type: type,
+                    target: target,
+                }) );
+                
+                return false;
+            });
+
+        });
+
+        // Navigate by History
+        window.onpopstate = (event) => {
+            let options = Object.assign( event.state, { _changeState: false } );
+            
+            let http = new HttpFoundation;
+            http.request( that._requestParameters( options ) );
+        };
         
-        return unsupportedBrowser();
+    }
+
+    _requestParameters( options ) {
+
+        var that = this;
+
+        return {
+            method: options.method, 
+            // method: "POST", 
+            // headers: {
+            //     "Content-Type": "application/x-www-form-urlencoded"
+            // },
+            // data: {
+            //     'test': "yep",
+            //     'test2': "Yop"
+            // },
+            url: options.url,
+            type: options.type,
+            debug: this._debug,
+            onBefore: function( client ) {
+                // console.log('ON BEFORE');
+                // changeHistoryState(url, "-");
+                return false;
+            },
+            onLoadStart: function( client ) {
+                // console.log('ON LOAD START');
+                return false;
+            },
+            onLoad: function( client, response, responseType, responseURL, status, statusText ) {
+                // console.log('ON LOAD');
+                return false;
+            },
+            onLoadEnd: function( client, response, responseType, responseURL, status, statusText ) {
+                // console.log('ON LOAD END');
+                return false;
+            },
+            onProgress: function( client, response, responseType, responseURL, status, statusText ) {
+                // console.log('ON PROGRESS');
+                return false;
+            },
+            onError: function( client, response, responseType, responseURL, status, statusText ) {
+                // console.log('ON ERROR');
+                return false;
+            },
+            onAbort: function( client ) {
+                // console.log('ON ABORT');
+                return false;
+            },
+            onTimeout: function( client, response, responseType, responseURL, status, statusText ) {
+                // console.log('ON TIMEOUT');
+                return false;
+            },
+            onHeadersRecieved: function( client, headers ) {
+                // console.log('ON HEADERS RECEIVDED ', headers);
+
+                // Get content type from Header
+                let contentType = client.getResponseHeader("Content-Type");
+                let mimeType = '';
+
+                // Check content type result as string
+                if ('string' === typeof(contentType))
+                {
+                    let contentTypeData = contentType.split(';');
+
+                    if (contentTypeData[0] != undefined)
+                    {
+                        mimeType = contentTypeData[0];
+                    }
+                }
+                
+                // If header "content type" value is not the same as "type" variable
+                if ( mimeType != options.type )
+                {
+                    client.abort();
+                }
+             
+                return false;
+            },
+            onDone: function( client, httpCode, statusText ) {
+                that.refresh();
+
+                return false;
+            },
+            onSuccess: function( client, response, status, statusText, responseURL ) {
+
+                let html  = new DOMParser().parseFromString(response, options.type);
+                let title = html.title;
+                
+                that._changeHistoryState({
+                    url: responseURL, 
+                    title: title,
+                    method: options.method, 
+                    type: options.type,
+                    target: options.target,
+                    _changeState: typeof(options._changeState) == 'boolean' ? options._changeState : true
+                });
+
+                switch (status)
+                {
+                    case 403:
+                        window.location.href = responseURL;
+                    break;
+
+                    default:
+                    case 200:
+                        try {
+                            var segment = html.getElementById( options.target ).innerHTML;
+                        }
+                        catch(e){
+                            var segment = response;
+                        }
+
+                        document.getElementById( options.target ).innerHTML = segment;
+                }
+            },
+        };
     }
 
     /**
@@ -271,27 +265,23 @@
      * @param {string} url 
      * @param {string} title 
      */
-    function changeState(url, title)
+    _changeHistoryState( data )
     {
         if (typeof (history.pushState) != "undefined") 
         {
-            var data = {
-                title: title, 
-                url: url 
-            };
+            // Change document title
+            document.title = data.title;
 
-            history.pushState(data, data.title, data.url);
+            // Add element to the nav history
+            if (data._changeState)
+            {
+                history.pushState(data, data.title, data.url);
+            }
 
             return true;
         } 
         
-        return unsupportedBrowser();
-    }
-
-    function unsupportedBrowser() 
-    {
         console.error("Browser does not support HTML5.");
         return false;
     }
-
-})();
+}

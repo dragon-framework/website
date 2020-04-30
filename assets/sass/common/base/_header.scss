@@ -1,0 +1,44 @@
+// Common Header
+// ========================================
+
+
+// Main header (base)
+// ------------------
+
+.main-header {
+    background-color: $whisper;
+
+    z-index: 999 !important;
+}
+
+
+// Sticky Header
+// --
+// Stylesheet definition for a "sticky header"
+// <html.sticky-header> ... <header.main-header>
+// ------------------
+
+/* Sticked header */
+.sticky-header .main-header {
+    position: fixed;
+	top: 0;
+	left: 0;
+    right: 0;
+    
+	box-shadow: 0 1px 4px $black-15;
+}
+
+/* Sticked header with animation */
+.sticky-animation .main-header {
+    animation: stickyAnimation .3s;
+}
+
+
+@keyframes stickyAnimation {
+	0% {
+		transform: translateY(-86px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

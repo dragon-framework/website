@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Books Read{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Book Read</h1>
+
+    {{ dump(book) }}
+    
+{% endblock %}

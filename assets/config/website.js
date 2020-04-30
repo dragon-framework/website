@@ -16,10 +16,10 @@ require("../../node_modules/bootstrap/dist/css/bootstrap.css");
 require("../../node_modules/aos/dist/aos.css");
 
 
-// Custom Scripts
+// Custom Style
 // --------------------
 
-require("../sass/website/main.scss");
+require("../sass/website/base.scss");
 
 
 // Scripts
@@ -39,6 +39,9 @@ require("bootstrap");
 
 // Animate On Scroll
 require("aos");
+
+// feather icons
+require("feather-icons");
 
 
 // Custom Scripts
